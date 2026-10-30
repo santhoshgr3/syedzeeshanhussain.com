@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/vendor/three.min.js" as="script">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Syed Zeeshan Hussain", "jobTitle": "Mineral Trader & Exporter", "url": "https://syedzeeshanhussain.com/", "image": "https://syedzeeshanhussain.com/assets/og-image.jpg", "address": {"@type": "PostalAddress", "addressCountry": "IN"}, "knowsAbout": ["Iron ore", "Quartz", "Bauxite", "Silica sand", "Coal", "Steel", "Mineral export"], "description": "Independent mineral trader and exporter from India with 20 years' experience. Iron ore, 99.94% SiO₂ quartz, bauxite, silica sand, coal and steel, shipped FOB, CFR or CIF."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Syed Zeeshan Hussain", "jobTitle": "Mineral Trader & Exporter", "url": "https://syedzeeshanhussain.com/", "image": "https://syedzeeshanhussain.com/assets/og-image.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Kurnool", "addressRegion": "Andhra Pradesh", "addressCountry": "IN"}, "knowsAbout": ["Iron ore", "Quartz", "Bauxite", "Silica sand", "Coal", "Steel", "Mineral export"], "description": "Independent mineral trader and exporter from India with 20 years' experience. Iron ore, 99.94% SiO₂ quartz, bauxite, silica sand, coal and steel, shipped FOB, CFR or CIF."}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,6 +238,17 @@ a{color:inherit}
 .crow:last-of-type{border-bottom:0}
 .crow small{display:block;font:500 .7rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .crow span{user-select:all;word-break:break-word}
+.vcard{position:relative;background:var(--panel);padding:0 26px 14px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(0,0,0,.45)}
+.vcard::before{content:"";display:block;height:6px;margin:0 -26px 22px;background:linear-gradient(90deg,var(--laterite),var(--ochre) 55%,var(--steel))}
+.vcard::after{content:"";position:absolute;right:-60px;bottom:-60px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--steel) 22%,transparent),transparent 70%);pointer-events:none}
+.vc-top{display:flex;align-items:center;gap:14px}
+.vc-mark{width:42px;height:42px;flex:none}
+.vc-name{font:800 1.3rem/1.15 var(--f-display);font-variation-settings:'wdth' 110}
+.vc-role{color:var(--laterite-2);font:500 .72rem/1.3 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.vc-line{margin:16px 0 6px;padding:10px 0;border-block:1px solid var(--line);color:var(--muted);font-size:.8rem;letter-spacing:.04em}
+.vcard .crow{position:relative;z-index:1}
+.vcard .crow a{color:var(--fg);text-decoration:none}
+.vcard .crow a:hover{color:var(--laterite)}
 .copy{font:500 .75rem/1 var(--f-mono);border:1px solid var(--line);background:transparent;color:var(--fg);padding:8px 10px;border-radius:6px;cursor:pointer}
 .copy:hover{border-color:var(--laterite)}
 .checklist{margin-top:26px;display:grid;gap:8px;list-style:none;padding:0}
@@ -692,11 +703,15 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <li>Delivery window and payment terms</li>
       </ul>
     </div>
-    <div class="cbox">
-      <p style="font:800 1.25rem/1.2 var(--f-display);font-variation-settings:'wdth' 110">Syed Zeeshan Hussain</p>
-      <p style="color:var(--muted);font-size:.9rem;margin-bottom:8px">Mineral Trader &amp; Exporter</p>
+    <div class="cbox vcard">
+      <div class="vc-top">
+        <svg class="vc-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 11 24 29H8L3 11Z" fill="var(--laterite)"/><path d="M16 2 20 13 29 11M20 13 24 29M20 13 8 29M3 11 20 13" stroke="var(--panel)" stroke-width="1.4" fill="none"/></svg>
+        <div><p class="vc-name">Syed Zeeshan Hussain</p><p class="vc-role">Mineral Trader &amp; Exporter</p></div>
+      </div>
+      <p class="vc-line">Iron Ore · Quartz · Bauxite · Silica Sand · Coal · Steel</p>
       <div class="crow"><div><small>Mobile / WhatsApp</small><a id="c-phone" href="tel:+917799663843">+91 77996 63843</a></div><button class="copy" data-copy="c-phone" type="button">Copy</button></div>
-      <div class="crow"><div><small>Address</small><span>India</span></div></div>
+      <div class="crow"><div><small>Address</small><span>Kurnool, Andhra Pradesh,<br>India</span></div></div>
+      <div class="crow"><div><small>Web</small><a href="https://syedzeeshanhussain.com">syedzeeshanhussain.com</a></div></div>
     </div>
   </div>
 </section>
