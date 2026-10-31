@@ -77,7 +77,7 @@ a{color:inherit}
 .brand{display:flex;align-items:center;gap:10px;font:800 1rem/1 var(--f-display);font-variation-settings:"wdth" 118;letter-spacing:.02em;text-decoration:none}
 .brand-mark{width:30px;height:30px;flex:none}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.9rem;color:var(--muted)}
-.nav ul a{text-decoration:none}
+.nav ul a{text-decoration:none;white-space:nowrap}
 .nav ul a:hover{color:var(--fg)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font:600 .95rem/1 var(--f-body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s}
 .btn-primary{background:var(--laterite);color:var(--on-accent)}
@@ -406,12 +406,12 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
       S. Z. HUSSAIN
     </a>
     <ul>
-      <li><a href="#journey">Supply chain</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#products">Commodities</a></li>
       <li><a href="#quartz">Reports</a></li>
       <li><a href="#partnerships">Partnerships</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#journey">Journey</a></li>
     </ul>
     <a class="btn btn-primary" href="#enquiry">Discuss a Requirement</a>
   </div>
@@ -452,27 +452,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
   </div>
 </header>
 
-<section class="journey" id="journey" aria-label="Export journey from Indian mine to destination port">
-  <div class="journey-stage">
-    <canvas id="journeyCanvas" aria-hidden="true"></canvas>
-    <div id="jfade"></div>
-    <span class="glabel" id="gl-origin">India</span>
-    <span class="glabel dest" id="gl-dest">Your destination port</span>
-    <div class="jhead"><div class="wrap">
-      <p class="eyebrow">The export journey</p>
-      <ol class="jrail" id="jrail"><li class="on">Mine</li><li>Road</li><li>Port</li><li>Sea</li><li>Market</li></ol>
-    </div></div>
-    <div class="jcaps"><div class="wrap">
-      <div class="jcap on"><span class="k">01 · At the mine</span><h3>Sourced at Indian mines</h3><p>Iron ore, quartz, bauxite and silica sand selected, graded and stockpiled at the source.</p></div>
-      <div class="jcap"><span class="k">02 · On the road</span><h3>Trucked to the loading port</h3><p>Material moves by road from the mine to the port stockyard, ready for inspection.</p></div>
-      <div class="jcap"><span class="k">03 · At the port</span><h3>Inspected and loaded</h3><p>An independent surveyor checks quality and quantity before the cargo goes into the hold.</p></div>
-      <div class="jcap"><span class="k">04 · At sea</span><h3>Shipped to your port</h3><p>FOB, CFR or CIF on bulk vessels or containers.</p><p class="note" id="jnote">Illustrative route. Confirmed trade destinations will be shown here.</p></div>
-      <div class="jcap" aria-hidden="true"></div>
-    </div></div>
-    <div class="jfinale" id="jfinale"><div class="wrap"><h2>From Indian Mines to <em>Global Markets</em></h2><p>Syed Zeeshan Hussain · Mineral Trader &amp; Exporter</p></div></div>
-    <div class="jscroll" id="jscroll"><i></i>Scroll</div>
-  </div>
-</section>
+
 
 
 
@@ -810,6 +790,28 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
       <div class="crow"><div><small>Address</small><span>Kurnool, Andhra Pradesh,<br>India</span></div></div>
       <div class="crow"><div><small>Web</small><a href="https://syedzeeshanhussain.com">syedzeeshanhussain.com</a></div></div>
     </div>
+  </div>
+</section>
+
+<section class="journey" id="journey" aria-label="Export journey from Indian mine to destination port">
+  <div class="journey-stage">
+    <canvas id="journeyCanvas" aria-hidden="true"></canvas>
+    <div id="jfade"></div>
+    <span class="glabel" id="gl-origin">India</span>
+    <span class="glabel dest" id="gl-dest">Your destination port</span>
+    <div class="jhead"><div class="wrap">
+      <p class="eyebrow">The export journey</p>
+      <ol class="jrail" id="jrail"><li class="on">Mine</li><li>Road</li><li>Port</li><li>Sea</li><li>Market</li></ol>
+    </div></div>
+    <div class="jcaps"><div class="wrap">
+      <div class="jcap on"><span class="k">01 · At the mine</span><h3>Sourced at Indian mines</h3><p>Iron ore, quartz, bauxite and silica sand selected, graded and stockpiled at the source.</p></div>
+      <div class="jcap"><span class="k">02 · On the road</span><h3>Trucked to the loading port</h3><p>Material moves by road from the mine to the port stockyard, ready for inspection.</p></div>
+      <div class="jcap"><span class="k">03 · At the port</span><h3>Inspected and loaded</h3><p>An independent surveyor checks quality and quantity before the cargo goes into the hold.</p></div>
+      <div class="jcap"><span class="k">04 · At sea</span><h3>Shipped to your port</h3><p>FOB, CFR or CIF on bulk vessels or containers.</p><p class="note" id="jnote">Illustrative route. Confirmed trade destinations will be shown here.</p></div>
+      <div class="jcap" aria-hidden="true"></div>
+    </div></div>
+    <div class="jfinale" id="jfinale"><div class="wrap"><h2>From Indian Mines to <em>Global Markets</em></h2><p>Syed Zeeshan Hussain · Mineral Trader &amp; Exporter</p></div></div>
+    <div class="jscroll" id="jscroll"><i></i>Scroll</div>
   </div>
 </section>
 
