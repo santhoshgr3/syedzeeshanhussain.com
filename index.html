@@ -84,7 +84,23 @@ a{color:inherit}
 .btn-primary:hover{background:var(--laterite-2);transform:translateY(-2px)}
 .btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
 .btn-ghost:hover{border-color:var(--fg)}
-@media (max-width:820px){.nav ul{display:none}}
+.brand-name{white-space:nowrap}
+.nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:transparent;cursor:pointer;padding:0;place-items:center;align-content:center;gap:5px}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--fg);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav ul .mcta{display:none}
+@media (max-width:1060px){
+  .nav-toggle{display:inline-grid}
+  .nav .wrap>.btn{display:none}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:6px 20px 18px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 22px 40px -20px rgba(0,0,0,.45);max-height:calc(100dvh - 70px);overflow:auto}
+  .nav.open ul{display:flex}
+  .nav ul li a:not(.btn){display:block;padding:15px 4px;font-size:1.02rem;border-bottom:1px solid var(--line);color:var(--fg)}
+  .nav ul .mcta{display:block;padding-top:16px}
+  .nav ul .mcta .btn{width:100%;justify-content:center}
+}
+@media (max-width:420px){.brand{font-size:.86rem;gap:8px}.brand-mark{width:26px;height:26px}}
 
 /* Stats band */
 .stats{background:var(--laterite);color:var(--on-accent)}
@@ -281,6 +297,43 @@ a{color:inherit}
 .vcard .crow{position:relative;z-index:1}
 .vcard .crow a{color:var(--fg);text-decoration:none}
 .vcard .crow a:hover{color:var(--laterite)}
+.prod-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:4px}
+.prod-actions .prod-cta{margin-top:0}
+.prod-view{font:600 .85rem/1 var(--f-body);min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;transition:border-color .2s,background .2s}
+.prod-view:hover{border-color:var(--laterite);background:color-mix(in srgb,var(--laterite) 8%,transparent)}
+.prod{cursor:pointer}
+.sub{margin:34px 0 14px;font-size:1.05rem}
+.vids{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.vid{margin:0;flex:1 1 280px;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.vid.portrait{flex:0 1 260px}
+.vid video{display:block;width:100%;height:auto;background:#000}
+.vid.portrait video{max-height:520px}
+.vid figcaption{padding:12px 14px;font:500 .72rem/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:640px){.shots{grid-template-columns:1fr 1fr}.shots figure:last-child{grid-column:1/-1}.vid,.vid.portrait{flex:1 1 100%}.vid.portrait{max-width:320px;margin-inline:auto}}
+.shots figure{margin:0;position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.shots img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.shots figcaption,.dlg-photos figcaption{position:absolute;left:8px;bottom:8px;right:8px;width:max-content;max-width:calc(100% - 16px);font:500 .64rem/1.2 var(--f-mono);letter-spacing:.06em;background:rgba(10,12,14,.74);color:#fff;padding:6px 8px;border-radius:4px}
+.dlg{border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--fg);padding:0;width:min(900px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.dlg::backdrop{background:rgba(5,7,9,.72);backdrop-filter:blur(3px)}
+.dlg-in{padding:28px;display:grid;gap:16px}
+.dlg-x{position:sticky;top:0;justify-self:end;width:44px;height:44px;margin-bottom:-52px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--fg);font-size:1.5rem;line-height:1;cursor:pointer;z-index:2}
+.dlg h3{font-size:1.6rem}
+.dlg-intro,.dlg-note{color:var(--muted);font-size:.95rem}
+.dlg-note a{color:var(--steel)}
+.dlg-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.dlg-photos figure{margin:0;position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.dlg-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.dlg .lab h3{font-size:1.02rem;padding-right:0}
+.dlg .labs{grid-template-columns:1fr 1fr}
+.prod-cta{min-height:40px}
+.crow a{display:inline-block;padding-block:8px}
+.copy{min-height:40px;min-width:56px}
+.brand{min-height:44px}
+@media (max-width:700px){.dlg-photos{grid-template-columns:1fr 1fr;gap:8px}.dlg-photos img{aspect-ratio:1/1}.dlg-photos figcaption{font-size:.58rem}}
+@media (max-width:700px){.dlg .labs{grid-template-columns:1fr}.dlg-in{padding:20px 16px}.dlg h3{font-size:1.35rem;padding-right:50px}.dlg .eyebrow{padding-right:50px}}
+.dlg-foot{display:flex;flex-wrap:wrap;gap:12px}
+body.dlg-open{overflow:hidden}
 .copy{font:500 .75rem/1 var(--f-mono);border:1px solid var(--line);background:transparent;color:var(--fg);padding:8px 10px;border-radius:6px;cursor:pointer}
 .copy:hover{border-color:var(--laterite)}
 .checklist{margin-top:26px;display:grid;gap:8px;list-style:none;padding:0}
@@ -403,15 +456,17 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
   <div class="wrap">
     <a class="brand" href="#top">
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 11 24 29H8L3 11Z" fill="var(--laterite)"/><path d="M16 2 20 13 29 11M20 13 24 29M20 13 8 29M3 11 20 13" stroke="var(--bg)" stroke-width="1.4" fill="none"/></svg>
-      S. Z. HUSSAIN
+      <span class="brand-name">SYED ZEESHAN HUSSAIN</span>
     </a>
-    <ul>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+    <ul id="navMenu">
       <li><a href="#about">About</a></li>
       <li><a href="#products">Commodities</a></li>
-      <li><a href="#quartz">Reports</a></li>
+      <li><a href="#samples">Samples</a></li>
       <li><a href="#partnerships">Partnerships</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#journey">Journey</a></li>
+      <li class="mcta"><a class="btn btn-primary" href="#enquiry">Discuss a Requirement</a></li>
     </ul>
     <a class="btn btn-primary" href="#enquiry">Discuss a Requirement</a>
   </div>
@@ -489,7 +544,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">Fe 58–65%</span><span class="chip">Fines 0–10 mm</span><span class="chip">Lumps 10–40 mm</span><span class="chip">Pellets</span></div>
         <p>Low silica, alumina, phosphorus and sulphur. Shipped in bulk on Supramax or Panamax vessels.</p>
         <p class="uses"><b>Used in</b> steel making, sinter and pellet plants</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Iron Ore">Request iron ore details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="iron-ore">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Iron Ore">Request iron ore details <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="prod lift" style="--glow:var(--steel)">
         <figure class="prod-photo"><img loading="lazy" src="assets/quartz-1.jpg" alt="White A-Grade quartz lump" style="object-position:50% 40%"><span>Actual sample</span></figure>
@@ -498,7 +553,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">SiO₂ 99.94%</span><span class="chip">Fe₂O₃ 0.03%</span><span class="chip">Al₂O₃ 0.09%</span><span class="chip">A-Grade white</span></div>
         <p>Lumps, grits and powder to custom mesh. Bulk, jumbo bags, 25/50 kg bags or containers.</p>
         <p class="uses"><b>Used in</b> glass, ceramics, ferro-silicon, foundry</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Quartz">Request quartz details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="quartz">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Quartz">Request quartz details <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="prod lift" style="--glow:var(--ochre)">
         <figure class="prod-photo"><img loading="lazy" src="assets/bauxite.jpg" alt="Lump of red pisolitic bauxite" style="object-position:50% 50%"><span>Representative image</span></figure>
@@ -507,7 +562,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">Al₂O₃ 40–55%</span><span class="chip">Metallurgical</span><span class="chip">Refractory</span><span class="chip">Calcined</span></div>
         <p>Lumps, crushed or calcined. Bulk vessel or containers.</p>
         <p class="uses"><b>Used in</b> alumina refining, cement, refractories, abrasives</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Bauxite">Request bauxite details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="bauxite">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Bauxite">Request bauxite details <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="prod lift" style="--glow:var(--ochre)">
         <figure class="prod-photo"><img loading="lazy" src="assets/silica-sand.jpg" alt="Handful of fine white silica sand sample"><span>Actual sample</span></figure>
@@ -516,7 +571,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">SiO₂ 97–99.7%</span><span class="chip">0.1–4 mm</span><span class="chip">Washed &amp; graded</span></div>
         <p>Glass, foundry and frac grades. Jumbo bags or bulk containers.</p>
         <p class="uses"><b>Used in</b> glass, foundry, construction, filtration</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Silica Sand">Request silica sand details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="silica-sand">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Silica Sand">Request silica sand details <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="prod lift" style="--glow:var(--muted)">
         <figure class="prod-photo"><img loading="lazy" src="assets/coal.jpg" alt="Lump of black thermal coal" style="object-position:50% 50%"><span>Representative image</span></figure>
@@ -525,7 +580,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">Steam / thermal</span><span class="chip">0–50 mm</span><span class="chip">GCV per spec</span></div>
         <p>Calorific value, ash, moisture and sulphur matched to buyer specification. Bulk vessel.</p>
         <p class="uses"><b>Used in</b> power plants, cement, sponge iron</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Coal">Request coal details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="coal">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Coal">Request coal details <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="prod lift" style="--glow:var(--steel)">
         <div class="prod-top"><span class="formula">Fe-C</span><span class="code">HS 72</span></div>
@@ -533,64 +588,30 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <div class="chips"><span class="chip">TMT bars</span><span class="chip">HR / CR coils</span><span class="chip">Billets</span><span class="chip">Pig iron</span></div>
         <p>Structural sections and sheets to IS, ASTM, BS or EN standards. Bundles, coils, break-bulk or containers.</p>
         <p class="uses"><b>Used in</b> construction, fabrication, manufacturing</p>
-              <a class="prod-cta" href="#enquiry" data-commodity="Steel">Request steel details <span aria-hidden="true">→</span></a>
+              <div class="prod-actions"><button class="prod-view" type="button" data-sample="steel">View sample results</button><a class="prod-cta" href="#enquiry" data-commodity="Steel">Request steel details <span aria-hidden="true">→</span></a></div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="quartz" id="quartz">
+<section class="samples" id="samples">
   <div class="wrap">
-    <div class="photos lift">
+    <div class="section-head lift">
+      <div><p class="eyebrow">Samples</p><h2>See the material before you commit.</h2></div>
+      <p class="lede">Videos and photos of sample material. Laboratory results sit with each product: open a product in the portfolio above and choose “View sample results”.</p>
+    </div>
+    <div class="vids lift">
+      <figure class="vid" style="flex-basis:380px"><video controls playsinline preload="none" width="848" height="480" poster="assets/sample-1.jpg"><source src="assets/sample-1.mp4" type="video/mp4"></video><figcaption>Sample video 1 · In hand</figcaption></figure>
+      <figure class="vid portrait"><video controls playsinline preload="none" width="478" height="850" poster="assets/sample-2.jpg"><source src="assets/sample-2.mp4" type="video/mp4"></video><figcaption>Sample video 2 · Close-up</figcaption></figure>
+      <figure class="vid" style="flex-basis:380px"><video controls playsinline preload="none" width="640" height="480" poster="assets/sample-3.jpg"><source src="assets/sample-3.mp4" type="video/mp4"></video><figcaption>Sample video 3 · Stockyard</figcaption></figure>
+    </div>
+    <h3 class="sub lift">Sample photos</h3>
+    <div class="shots lift">
       <figure><img loading="lazy" width="622" height="1100" src="assets/quartz-1.jpg" alt="Hand holding a lump of white A-Grade quartz above red soil"><figcaption>A-Grade white quartz</figcaption></figure>
-      <figure><img loading="lazy" width="622" height="1100" src="assets/quartz-2.jpg" alt="Close-up of a white quartz lump at the stockyard"><figcaption>Stockyard, Andhra Pradesh</figcaption></figure>
+      <figure><img loading="lazy" width="622" height="1100" src="assets/quartz-2.jpg" alt="Close-up of a white quartz lump at the stockyard"><figcaption>Quartz, stockyard, Andhra Pradesh</figcaption></figure>
+      <figure><img loading="lazy" src="assets/silica-sand.jpg" alt="Handful of fine white silica sand sample"><figcaption>Silica sand</figcaption></figure>
     </div>
-    <div>
-      <p class="eyebrow">Featured · Quartz</p>
-      <h2>99.94% silica, confirmed by two independent labs.</h2>
-      <div class="purity">
-        <svg class="ring" viewBox="0 0 170 170" role="img" aria-label="Silica content 99.94 percent">
-          <circle class="track" cx="85" cy="85" r="72" fill="none" stroke-width="12"/>
-          <circle class="val" id="ringVal" cx="85" cy="85" r="72" fill="none" stroke-width="12" stroke-linecap="round" transform="rotate(-90 85 85)" stroke-dasharray="452.39" stroke-dashoffset="0.27"/>
-          <text x="85" y="84" text-anchor="middle" style="font:800 30px var(--f-display)">99.94%</text>
-          <text x="85" y="106" text-anchor="middle" style="font:500 11px var(--f-mono);letter-spacing:.1em;fill:var(--muted)">SiO₂ · IS 1917</text>
-        </svg>
-        <p class="lede">White quartz of Andhra Pradesh origin with very low iron, alumina and alkalis. Suited to uses such as glass, ceramics and ferro-silicon, to the buyer's own specification. A fresh pre-shipment analysis comes with every lot.</p>
-      </div>
-      <div class="labs">
-        <div class="lab lift">
-          <h3>Noble Surveyors &amp; Assayers</h3>
-          <p class="meta">Chennai · Test report 19 Jan 2026 · Sample VSV-07, tested as submitted</p>
-          <div class="bars" data-max="0.1">
-            <div class="bar"><span class="k">Al₂O₃</span><span class="t"><i data-v="0.09"></i></span><span class="v">0.09%</span></div>
-            <div class="bar"><span class="k">LOI</span><span class="t"><i data-v="0.07"></i></span><span class="v">0.07%</span></div>
-            <div class="bar"><span class="k">Fe₂O₃</span><span class="t"><i data-v="0.03"></i></span><span class="v">0.03%</span></div>
-            <div class="bar"><span class="k">Na₂O</span><span class="t"><i data-v="0.01"></i></span><span class="v">0.01%</span></div>
-            <div class="bar"><span class="k">K₂O</span><span class="t"><i data-v="0.005"></i></span><span class="v">0.005%</span></div>
-          </div>
-          <p class="scale-note">Impurities · bar scale 0 to 0.10%</p>
-          <div class="ec"><span>SiO₂ (IS 1917)</span><b>99.94%</b></div>
-          <div class="ec"><span>Conductivity, 10% suspension @ 25 °C</span><b>3.6 µS/cm</b></div>
-        </div>
-        <div class="lab lift">
-          <h3>VJ Laboratories</h3>
-          <p class="meta">Visakhapatnam · ISO 9001:2015 · Certificate 979/2023-24, 18 Jul 2023 · A-Grade</p>
-          <div class="bars" data-max="0.02">
-            <div class="bar"><span class="k">Iron (Fe)</span><span class="t"><i data-v="0.019"></i></span><span class="v">0.019%</span></div>
-            <div class="bar"><span class="k">Calcium</span><span class="t"><i data-v="0.012"></i></span><span class="v">0.012%</span></div>
-            <div class="bar"><span class="k">Magnesium</span><span class="t"><i data-v="0.004"></i></span><span class="v">0.004%</span></div>
-            <div class="bar"><span class="k">Potassium</span><span class="t"><i data-v="0.003"></i></span><span class="v">0.003%</span></div>
-            <div class="bar"><span class="k">Aluminium</span><span class="t"><i data-v="0.002"></i></span><span class="v">0.002%</span></div>
-            <div class="bar"><span class="k">Sodium</span><span class="t"><i data-v="0.002"></i></span><span class="v">0.002%</span></div>
-            <div class="bar"><span class="k">Titanium</span><span class="t"><i data-v="0.001"></i></span><span class="v">0.001%</span></div>
-          </div>
-          <p class="scale-note">Impurities · bar scale 0 to 0.020% · Cu, Cr, Mn each &lt; 0.001%</p>
-          <div class="ec"><span>SiO₂ (IS 1917)</span><b>99.94%</b></div>
-          <div class="ec"><span>Conductivity, 10% aqueous solution</span><b>3.8 µS/cm</b></div>
-        </div>
-      </div>
-      <p class="scale-note" style="margin-top:16px">Full copies of both reports are available on request.</p>
-    </div>
+    <p class="part-cta lift"><a class="btn btn-primary" href="#enquiry">Request a sample <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
@@ -622,7 +643,7 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
     </div>
     <div class="feat-grid lift">
       <div class="feat"><b>01</b><h3>Product specifications</h3><p>Grade, purity, moisture, size and other parameters in writing before you commit.</p></div>
-      <div class="feat"><b>02</b><h3>Laboratory reports</h3><p>Available laboratory analysis and supporting documents. <a href="#quartz">See quartz reports</a>.</p></div>
+      <div class="feat"><b>02</b><h3>Laboratory reports</h3><p>Available laboratory analysis and supporting documents. <a href="#products">Open a product for its sample results</a>.</p></div>
       <div class="feat"><b>03</b><h3>Independent inspection</h3><p>Third-party inspection by SGS, Intertek, Bureau Veritas or an agency you nominate, where applicable.</p></div>
       <div class="feat"><b>04</b><h3>Shipment documentation</h3><p>Commercial and shipping documents prepared to the agreed Incoterm and LC terms.</p></div>
     </div>
@@ -820,9 +841,141 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
 
 <a class="wa-float" href="https://wa.me/917799663843?text=Hello%20Mr%20Hussain%2C%20I%20would%20like%20a%20firm%20offer%20for%20" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.4 2.4 3.6 5.7 5c2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.2-.2-.5-.3z"/></svg></a>
 <footer>
-  <div class="wrap"><span>© 2026 Syed Zeeshan Hussain · Mineral Trader &amp; Exporter, India</span><span class="flinks"><a href="#products">Commodities</a><a href="#journey">Supply chain</a><a href="#quartz">Reports</a><a href="#partnerships">Partnerships</a><a href="#contact">Contact</a></span></div>
+  <div class="wrap"><span>© 2026 Syed Zeeshan Hussain · Mineral Trader &amp; Exporter, India</span><span class="flinks"><a href="#products">Commodities</a><a href="#journey">Supply chain</a><a href="#samples">Samples</a><a href="#partnerships">Partnerships</a><a href="#contact">Contact</a></span></div>
 </footer>
 
+<dialog class="dlg" id="dlg-iron-ore" aria-labelledby="dlg-iron-ore-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-iron-ore-t">Iron Ore</h3>
+    <p class="dlg-intro">Representative image. Grade, size and quantity are confirmed on each offer.</p>
+    <div class="dlg-photos"><figure><img loading="lazy" src="assets/iron-ore.jpg" alt="Lump of grey iron ore"><figcaption>Representative image</figcaption></figure></div>
+    <p class="dlg-note">No laboratory report is published for this product yet. A sample and certified analysis can be arranged before contract where required. See <a href="#process" data-close>how a trade works</a>.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Iron Ore" data-close>Request iron ore details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<dialog class="dlg" id="dlg-quartz" aria-labelledby="dlg-quartz-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-quartz-t">Quartz</h3>
+    <p class="dlg-intro">Two independent laboratory reports on A-Grade white quartz of Andhra Pradesh origin. SiO₂ is 99.94% in both.</p>
+    <div class="dlg-photos"><figure><img loading="lazy" src="assets/quartz-1.jpg" alt="Hand holding a lump of white A-Grade quartz"><figcaption>A-Grade white quartz</figcaption></figure><figure><img loading="lazy" src="assets/quartz-2.jpg" alt="White quartz lump at the stockyard"><figcaption>Stockyard, Andhra Pradesh</figcaption></figure></div>
+    <div class="labs">
+        <div class="lab">
+          <h3>Noble Surveyors &amp; Assayers</h3>
+          <p class="meta">Chennai · Test report 19 Jan 2026 · Sample VSV-07, tested as submitted</p>
+          <div class="bars" data-max="0.1">
+            <div class="bar"><span class="k">Al₂O₃</span><span class="t"><i data-v="0.09"></i></span><span class="v">0.09%</span></div>
+            <div class="bar"><span class="k">LOI</span><span class="t"><i data-v="0.07"></i></span><span class="v">0.07%</span></div>
+            <div class="bar"><span class="k">Fe₂O₃</span><span class="t"><i data-v="0.03"></i></span><span class="v">0.03%</span></div>
+            <div class="bar"><span class="k">Na₂O</span><span class="t"><i data-v="0.01"></i></span><span class="v">0.01%</span></div>
+            <div class="bar"><span class="k">K₂O</span><span class="t"><i data-v="0.005"></i></span><span class="v">0.005%</span></div>
+          </div>
+          <p class="scale-note">Impurities · bar scale 0 to 0.10%</p>
+          <div class="ec"><span>SiO₂ (IS 1917)</span><b>99.94%</b></div>
+          <div class="ec"><span>Conductivity, 10% suspension @ 25 °C</span><b>3.6 µS/cm</b></div>
+        </div>
+        <div class="lab">
+          <h3>VJ Laboratories</h3>
+          <p class="meta">Visakhapatnam · ISO 9001:2015 · Certificate 979/2023-24, 18 Jul 2023 · A-Grade</p>
+          <div class="bars" data-max="0.02">
+            <div class="bar"><span class="k">Iron (Fe)</span><span class="t"><i data-v="0.019"></i></span><span class="v">0.019%</span></div>
+            <div class="bar"><span class="k">Calcium</span><span class="t"><i data-v="0.012"></i></span><span class="v">0.012%</span></div>
+            <div class="bar"><span class="k">Magnesium</span><span class="t"><i data-v="0.004"></i></span><span class="v">0.004%</span></div>
+            <div class="bar"><span class="k">Potassium</span><span class="t"><i data-v="0.003"></i></span><span class="v">0.003%</span></div>
+            <div class="bar"><span class="k">Aluminium</span><span class="t"><i data-v="0.002"></i></span><span class="v">0.002%</span></div>
+            <div class="bar"><span class="k">Sodium</span><span class="t"><i data-v="0.002"></i></span><span class="v">0.002%</span></div>
+            <div class="bar"><span class="k">Titanium</span><span class="t"><i data-v="0.001"></i></span><span class="v">0.001%</span></div>
+          </div>
+          <p class="scale-note">Impurities · bar scale 0 to 0.020% · Cu, Cr, Mn each &lt; 0.001%</p>
+          <div class="ec"><span>SiO₂ (IS 1917)</span><b>99.94%</b></div>
+          <div class="ec"><span>Conductivity, 10% aqueous solution</span><b>3.8 µS/cm</b></div>
+        </div>
+      </div>
+      <p class="scale-note" style="margin-top:14px">Full copies of both reports are available on request.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Quartz" data-close>Request quartz details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<dialog class="dlg" id="dlg-bauxite" aria-labelledby="dlg-bauxite-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-bauxite-t">Bauxite</h3>
+    <p class="dlg-intro">Representative image. Grade and form are confirmed on each offer.</p>
+    <div class="dlg-photos"><figure><img loading="lazy" src="assets/bauxite.jpg" alt="Lump of red pisolitic bauxite"><figcaption>Representative image</figcaption></figure></div>
+    <p class="dlg-note">No laboratory report is published for this product yet. A sample and certified analysis can be arranged before contract where required. See <a href="#process" data-close>how a trade works</a>.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Bauxite" data-close>Request bauxite details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<dialog class="dlg" id="dlg-silica-sand" aria-labelledby="dlg-silica-sand-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-silica-sand-t">Silica Sand</h3>
+    <p class="dlg-intro">Actual sample photograph. Washed and graded silica sand.</p>
+    <div class="dlg-photos"><figure><img loading="lazy" src="assets/silica-sand.jpg" alt="Handful of fine white silica sand"><figcaption>Actual sample</figcaption></figure></div>
+    <p class="dlg-note">No laboratory report is published for this product yet. A sample and certified analysis can be arranged before contract where required. See <a href="#process" data-close>how a trade works</a>.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Silica Sand" data-close>Request silica sand details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<dialog class="dlg" id="dlg-coal" aria-labelledby="dlg-coal-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-coal-t">Coal</h3>
+    <p class="dlg-intro">Representative image. Calorific value, ash, moisture and sulphur are matched to the buyer’s specification.</p>
+    <div class="dlg-photos"><figure><img loading="lazy" src="assets/coal.jpg" alt="Lump of black thermal coal"><figcaption>Representative image</figcaption></figure></div>
+    <p class="dlg-note">No laboratory report is published for this product yet. A sample and certified analysis can be arranged before contract where required. See <a href="#process" data-close>how a trade works</a>.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Coal" data-close>Request coal details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<dialog class="dlg" id="dlg-steel" aria-labelledby="dlg-steel-t">
+  <div class="dlg-in">
+    <button class="dlg-x" type="button" aria-label="Close" data-close>×</button>
+    <p class="eyebrow">Sample results</p>
+    <h3 id="dlg-steel-t">Steel</h3>
+    <p class="dlg-intro">TMT bars, HR and CR coils, billets and pig iron. Sample photographs are not published yet.</p>
+    
+    <p class="dlg-note">No laboratory report is published for this product yet. A sample and certified analysis can be arranged before contract where required. See <a href="#process" data-close>how a trade works</a>.</p>
+    <div class="dlg-foot"><a class="btn btn-primary" href="#enquiry" data-commodity="Steel" data-close>Request steel details <span aria-hidden="true">→</span></a><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'), tg=document.getElementById('navToggle');
+  if(nav&&tg){
+    function setOpen(o){ nav.classList.toggle('open',o); tg.setAttribute('aria-expanded',o?'true':'false'); tg.setAttribute('aria-label',o?'Close menu':'Open menu'); }
+    tg.addEventListener('click',function(){ setOpen(!nav.classList.contains('open')); });
+    nav.querySelectorAll('ul a').forEach(function(a){ a.addEventListener('click',function(){ setOpen(false); }); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
+    addEventListener('resize',function(){ if(innerWidth>1060) setOpen(false); });
+  }
+  function fill(d){
+    d.querySelectorAll('.bars').forEach(function(g){
+      var max=parseFloat(g.dataset.max);
+      g.querySelectorAll('i[data-v]').forEach(function(i){ i.style.width='0'; });
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        g.querySelectorAll('i[data-v]').forEach(function(i){ i.style.width=Math.min(100,parseFloat(i.dataset.v)/max*100)+'%'; });
+      }); });
+    });
+  }
+  function open(id){
+    var d=document.getElementById('dlg-'+id); if(!d||!d.showModal) { location.hash='#enquiry'; return; }
+    d.showModal(); document.body.classList.add('dlg-open'); d.scrollTop=0; fill(d);
+  }
+  document.querySelectorAll('.prod-view').forEach(function(b){ b.addEventListener('click',function(e){ e.stopPropagation(); open(b.dataset.sample); }); });
+  document.querySelectorAll('.prod').forEach(function(c){
+    c.addEventListener('click',function(e){ if(e.target.closest('a,button')) return; var b=c.querySelector('.prod-view'); if(b) open(b.dataset.sample); });
+  });
+  document.querySelectorAll('dialog.dlg').forEach(function(d){
+    d.addEventListener('click',function(e){ if(e.target===d || e.target.closest('[data-close]')) d.close(); });
+    d.addEventListener('close',function(){ document.body.classList.remove('dlg-open'); });
+  });
+})();
+</script>
 <script>
 (function(){
   var f=document.getElementById('enqForm'); if(!f) return;
