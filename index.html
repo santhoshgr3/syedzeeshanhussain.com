@@ -404,7 +404,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     var(--bg)}
 .hero-bg::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .hero-copy{min-width:0}
 .hero-id{display:flex;align-items:center;gap:10px;font:500 .78rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);margin-bottom:22px}
 .live{width:9px;height:9px;border-radius:50%;background:var(--laterite);box-shadow:0 0 0 0 var(--laterite);animation:live 2.2s infinite;flex:none}
@@ -424,6 +424,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .proof b{font:800 1.5rem/1 var(--f-display);font-variation-settings:"wdth" 108;font-variant-numeric:tabular-nums;white-space:nowrap}
 .proof span{font-size:.8rem;color:var(--muted);line-height:1.35}
 @media (max-width:640px){.proof{grid-template-columns:1fr 1fr}.proof li:nth-child(3){padding-left:0;border-left:0}.proof li:nth-child(n+3){border-top:1px solid var(--line);margin-top:14px}}
+.hero-photo{position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 34px 70px -30px rgba(0,0,0,.55);aspect-ratio:4/3;min-width:0}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(8,10,12,.35));pointer-events:none}
+.hero-tag{position:absolute;left:12px;bottom:12px;z-index:1;font:500 .64rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;background:rgba(10,12,14,.72);color:#fff;padding:7px 9px;border-radius:4px}
+@media (max-width:900px){.hero-photo{max-width:600px;width:100%;margin:0 auto}}
 .crystal-stage{position:relative;aspect-ratio:1/1.02;max-width:100%;min-width:0;touch-action:pan-y}
 #crystal{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
 #crystal:active{cursor:grabbing}
@@ -494,14 +499,10 @@ a#c-phone,a#c-mail{text-decoration:none;user-select:all;word-break:break-word}
         <li><b>LC</b><span>at sight · FOB / CFR / CIF</span></li>
       </ul>
     </div>
-    <div class="crystal-stage reveal-up d2">
-      <div class="crystal-glow" aria-hidden="true"></div>
-      <canvas id="crystal" role="img" aria-label="3D model of a white quartz crystal cluster"></canvas>
-      <div class="spec s1"><small>Silica</small><b>SiO₂ 99.94%</b></div>
-      <div class="spec s2"><small>Iron</small><b>Fe₂O₃ 0.03%</b></div>
-      <div class="spec s3"><small>Grade</small><b>A-Grade white quartz</b></div>
-      <span class="drag-hint" id="dragHint">Drag to rotate</span>
-    </div>
+    <figure class="hero-photo reveal-up d2">
+      <img src="assets/hero-mine.jpg" alt="Illustration of an open-pit mine with excavator, haul trucks, processing plant, rail wagons and a bulk carrier loading at the port" width="1195" height="896" fetchpriority="high">
+      <figcaption class="hero-tag">Illustration</figcaption>
+    </figure>
   </div>
   <div class="ticker" aria-label="Commodities supplied">
     <div class="ticker-track">
